@@ -91,7 +91,7 @@ export default function About() {
           }),
         }}
       />
-      {about.tableOfContent.display && (
+      {/* {about.tableOfContent.display && (
         <Column
           left="0"
           style={{ top: "50%", transform: "translateY(-50%)" }}
@@ -102,9 +102,9 @@ export default function About() {
         >
           <TableOfContents structure={structure} about={about} />
         </Column>
-      )}
+      )} */}
       <Flex fillWidth mobileDirection="column" horizontal="center">
-        {about.avatar.display && (
+        {/* {about.avatar.display && (
           <Column
             className={styles.avatar}
             minWidth="160"
@@ -129,7 +129,8 @@ export default function About() {
               </Flex>
             )}
           </Column>
-        )}
+        )} */}
+        
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}
@@ -138,42 +139,19 @@ export default function About() {
             vertical="center"
             marginBottom="32"
           >
-            {about.calendar.display && (
-              <Flex
-                fitWidth
-                border="brand-alpha-medium"
-                className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                }}
-                background="brand-alpha-weak"
-                radius="full"
-                padding="4"
-                gap="8"
-                marginBottom="m"
-                vertical="center"
-              >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Flex paddingX="8">Schedule a call</Flex>
-                <IconButton
-                  href={about.calendar.link}
-                  data-border="rounded"
-                  variant="secondary"
-                  icon="chevronRight"
-                />
-              </Flex>
-            )}
+            {/* {about.calendar.display && (
+            )} */}
             <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
+              Nexora
             </Heading>
             <Text
               className={styles.textAlign}
               variant="display-default-xs"
               onBackground="neutral-weak"
             >
-              {person.role}
+              web Development Agency
             </Text>
-            {social.length > 0 && (
+            {/* {social.length > 0 && (
               <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth>
                 {social.map(
                   (item) =>
@@ -200,24 +178,121 @@ export default function About() {
                     ),
                 )}
               </Flex>
-            )}
+            )} */}
           </Column>
 
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
+              Nexora is a cutting-edge web development agency dedicated to building high-performance,
+              scalable, and user-centric websites. We specialize in crafting digital solutions that empower
+              businesses to thrive online, combining innovation, aesthetics, and functionality to deliver exceptional
+              web experiences.
             </Column>
           )}
 
           {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
+                Meet Our Developers
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                {/* {about.work.experiences.map((experience, index) => ( */}
+                  <Column  fillWidth>
+                    <Flex
+                      fitWidth
+                      border="brand-alpha-medium"
+                      className={styles.blockAlign}
+                      style={{
+                        backdropFilter: "blur(var(--static-space-1))",
+                      }}
+                      background="brand-alpha-weak"
+                      radius="full"
+                      padding="4"
+                      gap="8"
+                      marginBottom="m"
+                      vertical="center"
+                    >
+                      <Avatar src="/mub.png" size="xl" />
+                      <Text  variant="heading-strong-l">
+                        Mubaris Hareef T 
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        / Fullstack Developer
+                      </Text>
+                    </Flex>
+      
+                    <Flex
+                      fitWidth
+                      border="brand-alpha-medium"
+                      className={styles.blockAlign}
+                      style={{
+                        backdropFilter: "blur(var(--static-space-1))",
+                      }}
+                      background="brand-alpha-weak"
+                      radius="full"
+                      padding="4"
+                      gap="8"
+                      marginBottom="m"
+                      vertical="center"
+                    >
+                      
+                      <Text  variant="heading-strong-l">
+                        Mohamed Yosuf J 
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        / Frontend Developer
+                      </Text>
+                      <Avatar src="/yus.png" size="xl" />
+                    </Flex>
+
+                    <Flex
+                      fitWidth
+                      border="brand-alpha-medium"
+                      className={styles.blockAlign}
+                      style={{
+                        backdropFilter: "blur(var(--static-space-1))",
+                      }}
+                      background="brand-alpha-weak"
+                      radius="full"
+                      padding="4"
+                      gap="8"
+                      marginBottom="m"
+                      vertical="center"
+                    >
+                      <Avatar src="/sha.png" size="xl" />
+                      <Text  variant="heading-strong-l">
+                        Mohamed Shahin M 
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        / Fullstack Developer
+                      </Text>
+                    </Flex>
+
+                    <Flex
+                      fitWidth
+                      border="brand-alpha-medium"
+                      className={styles.blockAlign}
+                      style={{
+                        backdropFilter: "blur(var(--static-space-1))",
+                      }}
+                      background="brand-alpha-weak"
+                      radius="full"
+                      padding="4"
+                      gap="8"
+                      marginBottom="m"
+                      vertical="center"
+                    >
+                      
+                      <Text  variant="heading-strong-l">
+                        Mohamed Jasir TK
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        / Backend Developer
+                      </Text>
+                      <Avatar src="/jas.png" size="xl" />
+                    </Flex>
+
+                    {/* <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
                       </Text>
@@ -264,13 +339,12 @@ export default function About() {
                           </Flex>
                         ))}
                       </Flex>
-                    )}
+                    )} */}
                   </Column>
-                ))}
               </Column>
             </>
           )}
-
+{/* 
           {about.studies.display && (
             <>
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
@@ -289,7 +363,7 @@ export default function About() {
                 ))}
               </Column>
             </>
-          )}
+          )} */}
 
           {about.technical.display && (
             <>
@@ -299,15 +373,15 @@ export default function About() {
                 variant="display-strong-s"
                 marginBottom="40"
               >
-                {about.technical.title}
+                Tech Stack
               </Heading>
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text variant="heading-strong-l">{skill.title}</Text>
+                    {/* <Text variant="heading-strong-l">{skill.title}</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
-                    </Text>
+                    </Text> */}
                     {skill.images && skill.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" gap="12" wrap>
                         {skill.images.map((image, index) => (

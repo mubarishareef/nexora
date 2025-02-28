@@ -1,12 +1,12 @@
-import { getPosts } from "@/app/utils/utils";
-import { Column } from "@/once-ui/components";
-import { Projects } from "@/components/work/Projects";
+import { Column, Flex, Heading } from "@/once-ui/components";
+import { Mailchimp } from "@/components";
+import { Posts } from "@/components/blog/Posts";
 import { baseURL } from "@/app/resources";
-import { person, work } from "@/app/resources/content";
+import { blog, person, newsletter } from "@/app/resources/content";
 
 export async function generateMetadata() {
-  const title = work.title;
-  const description = work.description;
+  const title = blog.title;
+  const description = blog.description;
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -16,7 +16,7 @@ export async function generateMetadata() {
       title,
       description,
       type: "website",
-      url: `https://${baseURL}/work/`,
+      url: `https://${baseURL}/blog`,
       images: [
         {
           url: ogImage,
@@ -33,37 +33,39 @@ export async function generateMetadata() {
   };
 }
 
-export default function Work() {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
-
+export default function Blog() {
   return (
-    <Column maxWidth="m">
+    <Column maxWidth="s">
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            headline: work.title,
-            description: work.description,
-            url: `https://${baseURL}/projects`,
-            image: `${baseURL}/og?title=Design%20Projects`,
+            "@type": "Blog",
+            headline: blog.title,
+            description: blog.description,
+            url: `https://${baseURL}/blog`,
+            image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
             author: {
               "@type": "Person",
               name: person.name,
+              image: {
+                "@type": "ImageObject",
+                url: `${baseURL}${person.avatar}`,
+              },
             },
-            hasPart: allProjects.map((project) => ({
-              "@type": "CreativeWork",
-              headline: project.metadata.title,
-              description: project.metadata.summary,
-              url: `https://${baseURL}/projects/${project.slug}`,
-              image: `${baseURL}/${project.metadata.image}`,
-            })),
           }),
         }}
       />
-      <Projects />
+      <Heading marginBottom="l" marginTop="xl" variant="display-strong-s">
+       Projects
+      </Heading>
+      <Column fillWidth flex={1}>
+        <Posts range={[1, 1]} thumbnail />
+        <Posts range={[4]} columns="2" />
+      </Column>
+      {/* {newsletter.display && <Mailchimp newsletter={newsletter} />} */}
     </Column>
   );
 }

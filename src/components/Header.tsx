@@ -8,6 +8,8 @@ import styles from "@/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
 import { person, home, about, blog, work, gallery } from "@/app/resources/content";
+import Image from "next/image";
+
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -47,7 +49,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
+      <Fade hide="s" fillWidth position="fixed" bottom="0" height="80" zIndex={9} />
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
@@ -58,8 +60,10 @@ export const Header = () => {
         padding="8"
         horizontal="center"
       >
+        <Image  src='/nexora-logo-only.png' width={150} height={30} alt="" style={{position:'fixed',top:'20px',left:'20px'}}/>
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+          {/* {display.location && <Flex hide="s">{person.location}</Flex>} */}
+          
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -109,7 +113,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes["/blog"] && (
+              {/* {routes["/blog"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -125,7 +129,7 @@ export const Header = () => {
                     selected={pathname.startsWith("/blog")}
                   />
                 </>
-              )}
+              )} */}
               {routes["/gallery"] && (
                 <>
                   <ToggleButton
@@ -147,7 +151,7 @@ export const Header = () => {
           </Flex>
         </Flex>
         <Flex fillWidth horizontal="end" vertical="center">
-          <Flex
+          {/* <Flex
             paddingRight="12"
             horizontal="end"
             vertical="center"
@@ -155,7 +159,7 @@ export const Header = () => {
             gap="20"
           >
             <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
-          </Flex>
+          </Flex> */}
         </Flex>
       </Flex>
     </>

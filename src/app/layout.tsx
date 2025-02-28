@@ -154,7 +154,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               <RouteGuard>{children}</RouteGuard>
             </Flex>
           </Flex>
-          <Footer />
+          {/* <Footer /> */}
         </Column>
       </ToastProvider>
     </Flex>

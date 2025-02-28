@@ -39,7 +39,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center">
+    <Column maxWidth="m" gap="xl" horizontal="center" vertical="center">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -66,12 +66,12 @@ export default function Home() {
         <Column maxWidth="s">
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
             <Heading wrap="balance" variant="display-strong-l">
-              {home.headline}
+            Innovate. Build. Deploy. Scale.
             </Heading>
           </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
+            We build future-ready websites that empower businesses to thrive in a digital-first world.
             </Text>
           </RevealFx>
           <RevealFx translateY="12" delay={0.4} horizontal="start">
@@ -91,13 +91,13 @@ export default function Home() {
                     size="m"
                   />
                 )}
-                {about.title}
+                About us
               </Flex>
             </Button>
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
+      {/* <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
       {routes["/blog"] && (
@@ -113,7 +113,7 @@ export default function Home() {
         </Flex>
       )}
       <Projects range={[2]} />
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      {newsletter.display && <Mailchimp newsletter={newsletter} />} */}
     </Column>
   );
 }

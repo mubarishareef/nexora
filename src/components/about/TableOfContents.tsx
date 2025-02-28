@@ -61,7 +61,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
               <Flex height="1" minWidth="16" background="neutral-strong"></Flex>
               <Text>{section.title}</Text>
             </Flex>
-            {about.tableOfContent.subItems && (
+            {/* {about.tableOfContent.subItems && (
               <>
                 {section.items.map((item, itemIndex) => (
                   <Flex
@@ -79,7 +79,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
                   </Flex>
                 ))}
               </>
-            )}
+            )} */}
           </Column>
         ))}
     </Column>
