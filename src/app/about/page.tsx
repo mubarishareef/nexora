@@ -292,6 +292,29 @@ export default function About() {
                       <Avatar src="/jas.png" size="xl" />
                     </Flex>
 
+                    <Flex
+                      fitWidth
+                      border="brand-alpha-medium"
+                      className={styles.blockAlign}
+                      style={{
+                        backdropFilter: "blur(var(--static-space-1))",
+                      }}
+                      background="brand-alpha-weak"
+                      radius="full"
+                      padding="4"
+                      gap="8"
+                      marginBottom="m"
+                      vertical="center"
+                    >
+                      <Avatar src="/wasee.png" size="xl" />
+                      <Text  variant="heading-strong-l">
+                        Muhammed Waseem 
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        / Fullstack Developer
+                      </Text>
+                    </Flex>
+
                     {/* <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
